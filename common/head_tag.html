@@ -1,0 +1,11 @@
+<script type="text/discourse-plugin" version="0.2">
+  api.onPageChange((url, title) => {
+    if (window._paq) {
+      const currentUser = api._currentUser;
+      window._paq.push(['setCustomVariable', 1, 'Anonymous', !currentUser, 'visit']);
+      window._paq.push(["setCustomUrl", url]);
+      window._paq.push(["setDocumentTitle", title]);
+      window._paq.push(["trackPageView"]);
+    }
+  });
+</script>
