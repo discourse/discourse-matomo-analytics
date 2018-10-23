@@ -1,11 +1,22 @@
 <script type="text/discourse-plugin" version="0.2">
   api.onPageChange((url, title) => {
-    if (window._paq) {
-      const currentUser = api._currentUser;
-      window._paq.push(['setCustomVariable', 1, 'Anonymous', !currentUser, 'visit']);
-      window._paq.push(["setCustomUrl", url]);
-      window._paq.push(["setDocumentTitle", title]);
-      window._paq.push(["trackPageView"]);
+    window._paq = window._paq || [];
+    window._paq_loaded = window._paq_loaded || false;
+
+    if (!_paq_loaded) {
+      var u = `//${settings.host_url}/`;
+      _paq.push(['setTrackerUrl', u+'piwik.php']);
+      _paq.push(['setSiteId', settings.website_id]);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      _paq_loaded = true;
     }
+
+    const currentUser = api._currentUser;
+    _paq.push(['setCustomVariable', 1, 'Anonymous', !currentUser, 'visit']);
+    _paq.push(["setCustomUrl", url]);
+    _paq.push(["setDocumentTitle", title]);
+    _paq.push(["trackPageView"]);
+    _paq.push(['enableLinkTracking']);
   });
 </script>
