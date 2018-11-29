@@ -5,3 +5,9 @@ host_url:
 website_id:
   type: string
   default: ''
+extend_content_security_policy:
+  type: list
+  default: ''
+  description: |
+    <p>Put in <code>script_src: host_url</code>.</p>
+    <p>For example, if your <code>host_url</code> is <code>my-matomo.com</code>, put in <code>script_src: my-matomo.com</code>.</>
