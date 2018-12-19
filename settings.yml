@@ -1,3 +1,4 @@
+nil_setting:
 host_url:
   type: string
   default: ''
