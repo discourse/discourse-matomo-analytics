@@ -18,5 +18,9 @@
     _paq.push(["setDocumentTitle", title]);
     _paq.push(["trackPageView"]);
     _paq.push(['enableLinkTracking']);
+
+    if (settings.track_subdomains) {
+      _paq.push(["setCookieDomain", "*." + settings.host_url]);
+    }
   });
 </script>

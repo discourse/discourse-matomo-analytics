@@ -5,3 +5,7 @@ host_url:
 website_id:
   type: string
   default: ''
+track_subdomains:
+  type: bool
+  default: false
+  description: Track visitors across all subdomains
