@@ -18,5 +18,13 @@
     _paq.push(["setDocumentTitle", title]);
     _paq.push(["trackPageView"]);
     _paq.push(['enableLinkTracking']);
+
+    if (settings.crossdomain_tracking) {
+      var slashPos = settings.host_url.indexOf('/');
+      var siteDomain = slashPos == -1 ? settings.host_url : settings.host_url.substr(0, slashPos);
+      _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+      _paq.push(["setCookieDomain", "*." + siteDomain]);
+      _paq.push(["setDomains", "*." + siteDomain]);
+    }
   });
 </script>

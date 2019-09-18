@@ -5,3 +5,7 @@ host_url:
 website_id:
   type: string
   default: ''
+crossdomain_tracking:
+  type: bool
+  default: false
+  description: Track visitors across site domain and subdomains
