@@ -5,3 +5,15 @@ host_url:
 website_id:
   type: string
   default: ''
+exclude_groups:
+  type: string
+  default: ''
+  description: Comma separated list of groups to exclude from tracking such as admins, staff.
+user_id_tracking:
+  type: string
+  default: ''
+  description: An indentifying field name on the current user object such as id, username or external_id.
+subdomain_tracking:
+  type: bool
+  default: false
+  description: Track visitors across main domain & subdomains, assuming discourse is on a subdomain.
