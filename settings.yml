@@ -5,3 +5,7 @@ host_url:
 website_id:
   type: string
   default: ''
+subdomain_tracking:
+  type: bool
+  default: false
+  description: Track visitors across main domain & subdomains, assuming discourse is on a subdomain.
