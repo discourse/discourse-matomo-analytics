@@ -12,14 +12,19 @@
       _paq_loaded = true;
     }
 
-    const currentUser = api._currentUser;
-    _paq.push(['setCustomVariable', 1, 'Anonymous', !currentUser, 'visit']);
-    _paq.push(["setCustomUrl", url]);
+    const currentUser = api.getCurrentUser();
+
+    if (settings.user_id_tracking && currentUser[settings.user_id_tracking]) {
+      _paq.push(['setUserId', currentUser[settings.user_id_tracking]]);
+    }
+
     if (settings.subdomain_tracking) {
-      var allDomains = "*" + document.domain.substring(document.domain.indexOf("."));
+      const allDomains = "*" + document.domain.substring(document.domain.indexOf("."));
       _paq.push(["setCookieDomain", allDomains]);
       _paq.push(["setDomains", allDomains]);
     }
+    
+    _paq.push(["setCustomUrl", url]);
     _paq.push(["setDocumentTitle", title]);
     _paq.push(["trackPageView"]);
     _paq.push(['enableLinkTracking']);
