@@ -8,7 +8,7 @@ website_id:
 user_id_tracking:
   type: string
   default: ''
-  description: Enter a field name on the current user object such as id, username or external_id.
+  description: An indentifying field name on the current user object such as id, username or external_id.
 subdomain_tracking:
   type: bool
   default: false
