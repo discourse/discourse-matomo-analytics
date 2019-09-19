@@ -8,4 +8,4 @@ website_id:
 subdomain_tracking:
   type: bool
   default: false
-  description: Track across domain & subdomains, assuming discourse is subdomain.
+  description: Track visitors across main domain & subdomains, assuming discourse is on a subdomain.
