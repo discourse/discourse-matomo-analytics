@@ -5,6 +5,10 @@ host_url:
 website_id:
   type: string
   default: ''
+exclude_groups:
+  type: string
+  default: ''
+  description: Comma separated list of groups to exclude from tracking.
 user_id_tracking:
   type: string
   default: ''

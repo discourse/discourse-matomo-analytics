@@ -1,5 +1,15 @@
 <script type="text/discourse-plugin" version="0.2">
   api.onPageChange((url, title) => {
+    const currentUser = api.getCurrentUser();
+
+    if (settings.exclude_groups.trim()) {
+      const excludedGroups = settings.exclude_groups.split(",").map(g => g.trim());
+      const currentUserGroups = currentUser.groups.map(g => g.name);
+      if (excludedGroups.filter(g => currentUserGroups.includes(g)).length) {
+        return;
+      }
+    }
+
     window._paq = window._paq || [];
     window._paq_loaded = window._paq_loaded || false;
 
@@ -11,8 +21,6 @@
       g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
       _paq_loaded = true;
     }
-
-    const currentUser = api.getCurrentUser();
 
     const userIdField = settings.user_id_tracking.trim();
     if (settings.user_id_tracking && currentUser[userIdField]) {
