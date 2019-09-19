@@ -2,7 +2,7 @@
   api.onPageChange((url, title) => {
     const currentUser = api.getCurrentUser();
 
-    if (settings.exclude_groups.trim()) {
+    if (settings.exclude_groups.trim() && currentUser) {
       const excludedGroups = settings.exclude_groups.split(",").map(g => g.trim());
       const currentUserGroups = currentUser.groups.map(g => g.name);
       if (excludedGroups.filter(g => currentUserGroups.includes(g)).length) {
@@ -23,7 +23,7 @@
     }
 
     const userIdField = settings.user_id_tracking.trim();
-    if (userIdField && currentUser[userIdField]) {
+    if (userIdField && currentUser && currentUser[userIdField]) {
       _paq.push(['setUserId', currentUser[userIdField]]);
     }
 
