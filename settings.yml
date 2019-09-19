@@ -8,7 +8,7 @@ website_id:
 exclude_groups:
   type: string
   default: ''
-  description: Comma separated list of groups to exclude from tracking.
+  description: Comma separated list of groups to exclude from tracking such as admins, staff.
 user_id_tracking:
   type: string
   default: ''
