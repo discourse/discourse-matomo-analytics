@@ -23,7 +23,7 @@
     }
 
     const userIdField = settings.user_id_tracking.trim();
-    if (settings.user_id_tracking && currentUser[userIdField]) {
+    if (userIdField && currentUser[userIdField]) {
       _paq.push(['setUserId', currentUser[userIdField]]);
     }
 
