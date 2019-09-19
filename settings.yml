@@ -5,7 +5,7 @@ host_url:
 website_id:
   type: string
   default: ''
-crossdomain_tracking:
+subdomain_tracking:
   type: bool
   default: false
-  description: Track visitors across site domain and subdomains
+  description: Track across domain & subdomains, assuming discourse is subdomain.
