@@ -37,5 +37,11 @@
     _paq.push(["setDocumentTitle", title]);
     _paq.push(["trackPageView"]);
     _paq.push(['enableLinkTracking']);
+    if (settings.do_not_track) {
+        _paq.push(["setDoNotTrack", true]);
+    }
+    if (settings.tracking_cookies) {
+        _paq.push(["disableCookies"]);
+    }
   });
 </script>
