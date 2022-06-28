@@ -20,7 +20,7 @@ subdomain_tracking:
 do_not_track:
   type: bool
   default: true
-  description: So tracking requests will not be sent if visitors do not wish to be tracked
+  description: So tracking requests will not be sent if visitors do not wish to be tracked.
 tracking_cookies:
   type: bool
   default: true
