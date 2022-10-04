@@ -19,7 +19,7 @@ subdomain_tracking:
   description: Track visitors across main domain & subdomains, assuming discourse is on a subdomain.
 do_not_track:
   type: bool
-  default: true
+  default: false
   description: So tracking requests will not be sent if visitors do not wish to be tracked.
 disable_cookies:
   type: bool
