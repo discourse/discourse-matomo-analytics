@@ -17,3 +17,11 @@ subdomain_tracking:
   type: bool
   default: false
   description: Track visitors across main domain & subdomains, assuming discourse is on a subdomain.
+do_not_track:
+  type: bool
+  default: false
+  description: So tracking requests will not be sent if visitors do not wish to be tracked.
+disable_cookies:
+  type: bool
+  default: false
+  description: Disables all first party cookies. Existing Matomo cookies for this website will be deleted on the next pageview.
